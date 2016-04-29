@@ -39,6 +39,6 @@ However, this requires changes to the Compiler class.
 
 ## License
 
-Copyright © 2012 Paul gearon
+Copyright © 2012 Paula Gearon
 
 Distributed under the Eclipse Public License, the same as Clojure.
