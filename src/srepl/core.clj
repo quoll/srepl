@@ -64,6 +64,7 @@
 (alter-var-root (var clojure.main/repl) (constantly meta-repl))
 
 (defn repl-opt
+  "Duplicates standard repl entry point in Clojure, handling init functions and initial requirements"
   [[_ & args] inits]
   (when-not (some #(= #'clojure.main/eval-opt (#'clojure.main/init-dispatch (first %))) inits)
     (println "Clojure" (clojure-version)))
@@ -74,7 +75,8 @@
   (System/exit 0))
 
 (defn -main
-  "Standalone entry point for the repl. Duplicates the standard entry by clojure.main"
+  "Standalone entry point for the repl. Duplicates the standard entry by clojure.main to handle the various
+   expected command line options, when init functions are provided and/or a repl is not being called."
   [& args]
   (try 
     (if args
