@@ -4,5 +4,5 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.12.0"]]
-  :aot [srepl.core]
-  :main srepl.core)
+  :aot [srepl.main srepl.core]
+  :main srepl.main)
